@@ -17,8 +17,8 @@ class virt::debian {
 				"python-virtinst",
 				"qemu",
 				"qemu-img",
-				"qspice-libs"]: 
-					ensure => latest; 
+				"qspice-libs"]:
+					ensure => latest,
 			}
 		}
 		xen: {
@@ -27,7 +27,7 @@ class virt::debian {
 				"xen-hypervisor",
 				"xen-tools",
 				"xen-utils"]:
-					ensure => latest;
+					ensure => latest,
 			}
 		}
 		openvzhn: {
@@ -110,4 +110,19 @@ class virt::fedora {
 			}
 		}
 	}
+}
+
+class virt::centos {
+  case $virtual {
+    kvm: {
+      package {
+        ["kvm",
+        "qemu",
+        "libvirt",
+        "python-virtinst",
+        "ruby-libvirt"]:
+          ensure => present,
+      }
+    }
+  }
 }
