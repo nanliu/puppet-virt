@@ -18,7 +18,7 @@ class virt::debian {
 				"qemu",
 				"qemu-img",
 				"qspice-libs"]:
-					ensure => latest,
+					ensure => present,
 			}
 		}
 		xen: {
@@ -27,7 +27,7 @@ class virt::debian {
 				"xen-hypervisor",
 				"xen-tools",
 				"xen-utils"]:
-					ensure => latest,
+					ensure => present,
 			}
 		}
 		openvzhn: {
@@ -38,7 +38,7 @@ class virt::debian {
 				"vzdump",
 				"libvirt-bin",
 				"python-virtinst" ]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 	}
@@ -54,7 +54,7 @@ class virt::ubuntu {
 				"qemu",
 				"qemu-kvm",
 				"libvirt-ruby"]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 		xen: {
@@ -62,7 +62,7 @@ class virt::ubuntu {
 				["python-vm-builder",
 				"ubuntu-xen-server",
 				"libvirt-ruby"]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 		openvzhn: {
@@ -72,7 +72,7 @@ class virt::ubuntu {
 				"vzquota",
 				"libvirt-bin",
 				"python-virtinst"]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 	}
@@ -87,7 +87,7 @@ class virt::fedora {
 				"libvirt",
 				"python-virtinst",
 				"ruby-libvirt"]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 		xen: {
@@ -95,7 +95,7 @@ class virt::fedora {
 				["kernel-xen",
 				"xen",
 				"ruby-libvirt"]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 		openvzhn: {
@@ -106,7 +106,7 @@ class virt::fedora {
 				"libvirt",
 				"python-virtinst",
 				"ruby-libvirt"]:
-					ensure => latest;
+					ensure => present;
 			}
 		}
 	}
